@@ -1,18 +1,18 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ReportService} from "../../../_services/report.service";
 
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
-  styleUrls: []
+  styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
-  private readonly reportService = inject(ReportService);
-
   top10BestSellingCategories: any;
   top10PurchasedProducts: any;
   customerByCountry: any;
   totalSalesPerCountry: any;
+
+  constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
     this.reportService.getTop10BestSellingCategories().subscribe(res => {

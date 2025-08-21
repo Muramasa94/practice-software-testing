@@ -1,4 +1,4 @@
-import {inject, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from "../../environments/environment";
 import {map, Observable, throwError} from "rxjs";
 import {HttpClient, HttpErrorResponse, HttpParams} from "@angular/common/http";
@@ -9,8 +9,10 @@ import {Category} from "../models/category";
   providedIn: 'root'
 })
 export class CategoryService {
-  private httpClient = inject(HttpClient);
   private apiURL = environment.apiUrl;
+
+  constructor(private httpClient: HttpClient) {
+  }
 
   searchCategories(query: string): Observable<any> {
     let params = new HttpParams()

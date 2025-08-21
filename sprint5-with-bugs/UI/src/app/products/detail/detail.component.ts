@@ -1,35 +1,20 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CartService} from "../../_services/cart.service";
 import {FavoriteService} from "../../_services/favorite.service";
-import {ActivatedRoute, RouterLink} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {ToastService} from "../../_services/toast.service";
 import {Product} from "../../models/product";
 import DiscountUtil from "../../_helpers/discount.util";
 import {ProductService} from "../../_services/product.service";
-import {NgxSliderModule, Options} from "@angular-slider/ngx-slider";
+import {Options} from "@angular-slider/ngx-slider";
 import {BrowserDetectorService} from "../../_services/browser-detector.service";
-import {NgClass} from "@angular/common";
-import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  imports: [
-    NgClass,
-    RouterLink,
-    NgxSliderModule,
-    FormsModule
-  ],
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  private readonly cartService = inject(CartService);
-  private readonly favoriteService = inject(FavoriteService);
-  private readonly route = inject(ActivatedRoute);
-  private readonly toastService = inject(ToastService);
-  private readonly productService = inject(ProductService);
-  public readonly browserDetect = inject(BrowserDetectorService);
-
   product: Product;
   discount_percentage: any;
   quantity: number = 1;
@@ -40,6 +25,14 @@ export class DetailComponent implements OnInit {
     floor: 1,
     ceil: 10
   };
+
+  constructor(private cartService: CartService,
+              private favoriteService: FavoriteService,
+              private route: ActivatedRoute,
+              private toastService: ToastService,
+              private productService: ProductService,
+              public browserDetect: BrowserDetectorService) {
+  }
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe(params => {

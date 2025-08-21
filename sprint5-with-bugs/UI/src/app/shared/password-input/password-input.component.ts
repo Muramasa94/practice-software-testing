@@ -1,14 +1,10 @@
 import {Component, forwardRef, Input} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {NgClass} from "@angular/common";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-password-input',
   templateUrl: './password-input.component.html',
-  styleUrls: [],
-  imports: [
-    NgClass
-  ],
+  styleUrls: ['./password-input.component.css'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

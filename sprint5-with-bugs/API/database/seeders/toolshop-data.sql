@@ -10,7 +10,40 @@ VALUES (1, 'John', 'Doe', 'Test street 123', 'Utrecht', NULL, 'The Netherlands',
        (2, 'Jane', 'Doe', 'Test street 98', 'Vienna', NULL, 'Austria', NULL, NULL, '1980-02-02',
         'customer@practicesoftwaretesting.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user'),
        (3, 'Jack', 'Howe', 'Test street 654', 'Frankfurt', NULL, 'Germany', NULL, NULL, '1980-03-03',
-        'customer2@practicesoftwaretesting.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user');
+        'customer2@practicesoftwaretesting.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user'),
+        (4, 'Jack', 'Howe', 'Test street 654', 'Frankfurt', NULL, 'Germany', NULL, NULL, '1980-03-03',
+        'invalid.email', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user'),
+        (5, 'Jack', 'Howe', 'Test street 654', 'Frankfurt', NULL, 'Germany', NULL, NULL, '1980-03-03',
+        'customer3@practicesoftwaretesting.com', 'fcc3a23fc7232cc89c7cb0f23d8774fefb73d7dc2ab22e6a1b6b8b202b4dcc91', 'user'),
+        (6, 'Jack', 'Howe', 'Test street 654', 'Frankfurt', NULL, 'Germany', NULL, NULL, '1980-03-03',
+        'customer4@practicesoftwaretesting.com', '996b021bab18a1b4832a4282f84c10b5743dca721b9922b3234bad184f3f61c2', 'user'),
+        (7, 'Jack', 'Howe', 'Test street 654', 'Frankfurt', NULL, 'Germany', NULL, NULL, '1980-03-03',
+        'customer5@practicesoftwaretesting.com', 'e4ffd1c4d65b3b1886b60da9f66b00b44fe289d7ac76e4489021528572eba30b', 'user'),
+        (8, 'Jack', 'Howe', 'Test street 654', 'Frankfurt', NULL, 'Germany', NULL, NULL, '1980-03-03',
+        'customer6@practicesoftwaretesting.com', '976cd7ee4f01b1a582127b7152291ce017c3ffa569932b9d37dd50e453775853', 'user'),
+        (9, 'Jack', 'Howe', 'Test street 654', 'Frankfurt', NULL, 'Germany', NULL, NULL, '1980-03-03',
+        'customer7@practicesoftwaretesting.com', 'a71d1528a3519546852ac828c3fe0b965e5233b44d1567a41463423098d6568e', 'user'),
+        (10, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'bbbbbbbbbbbbbbbbbbbb', 'Test street 98', 'Vienna', NULL, 'Austria', NULL, NULL, '1980-02-02',
+        'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@practicesoftwaretesting.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user'),
+        (11, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'bbbbbbbbbbbbbbbbbbb', 'Test street 98', 'Vienna', NULL, 'Austria', NULL, NULL, '1980-02-02',
+        'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@practicesoftwaretesting.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user'),
+        (13, 'Jane', 'Doe', 'Test street 98', 'Vienna', NULL, 'Austria', NULL, NULL, '1980-02-02',
+        'cus-tom.er@practicesoftwaretesting.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user'),
+        (14, 'Jane', 'Doe', 'Test street 98', 'Vienna', NULL, 'Austria', NULL, NULL, '1980-02-02',
+        'customer@practice-software-testing.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user'),
+        (15, 'Jane', 'Doe', 'Test street 98', 'Vienna', NULL, 'Austria', NULL, NULL, '1980-02-02',
+        'customer@practice!software?testing.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user'),
+        (16, 'Jane', 'Doe', 'Test street 98', 'Vienna', NULL, 'Austria', NULL, NULL, '1980-02-02',
+        'customer8@practicesoftwaretesting.com', '8018eb25df6181b45555494140c5afd19ecae79b080874563c8c75bba4cd11d3', 'user'),
+        (17, 'John', 'Doe', 'Test street 123', 'Utrecht', NULL, 'The Netherlands', NULL, NULL, '1980-01-01',
+        'admin2@practicesoftwaretesting.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'admin'),
+        (18, 'name_with_unicode_ß_中文', 'Doe', 'Test street 98', 'Vienna', NULL, 'Austria', NULL, NULL, '1980-02-02',
+        'customerß@practicesoftwaretesting.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user');
+
+/** Disabled User **/
+INSERT INTO users (id, first_name, last_name, address, city, state, country, postcode, phone, dob, email, password, role, enabled)
+VALUES (12, 'Disabled', 'User', 'Some street', 'Some city', NULL, 'Some country', NULL, NULL, '1990-01-01', 
+        'disableduser@example.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user', 0);
 
 /** Brand names **/
 INSERT INTO `brands` (`name`, `slug`)

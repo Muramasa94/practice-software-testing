@@ -15,7 +15,7 @@ jobs:
       - name: Start containers 🐳
         run: |
           export DISABLE_LOGGING=true
-          docker compose -f docker-compose.yml up -d --force-recreate
+          docker compose -f docker-compose.yml up -d
       - name: Sleep for 60 seconds
         run: sleep 60s
         shell: bash

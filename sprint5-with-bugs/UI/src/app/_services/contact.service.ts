@@ -1,4 +1,4 @@
-import {inject, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from "../../environments/environment";
 import {Observable, of, switchMap, throwError} from "rxjs";
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from "@angular/common/http";
@@ -9,8 +9,10 @@ import {ContactMessage} from "../models/contact-message";
   providedIn: 'root'
 })
 export class ContactService {
-  private httpClient = inject(HttpClient);
   private apiURL = environment.apiUrl;
+
+  constructor(private httpClient: HttpClient) {
+  }
 
   getMessages(page: any): Observable<any> {
     let params = new HttpParams().set('page', page);

@@ -1,27 +1,23 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
-import {NgClass} from "@angular/common";
-import {RouterLink} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
-  imports: [
-    ReactiveFormsModule,
-    NgClass,
-    RouterLink
-  ],
-  styleUrls: []
+  styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-  private readonly formBuilder = inject(FormBuilder);
-
   form: FormGroup;
   id: string;
   submitted: boolean = false;
   isUpdated: boolean = false;
   hideAlert: boolean = false;
   error: string;
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
+  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({

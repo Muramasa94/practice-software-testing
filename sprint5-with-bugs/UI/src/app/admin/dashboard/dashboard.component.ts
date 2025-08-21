@@ -1,62 +1,16 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ReportService} from "../../_services/report.service";
 import {Invoice} from "../../models/invoice";
 import {InvoiceService} from "../../_services/invoice.service";
 import {first} from "rxjs/operators";
 import {Pagination} from "../../models/pagination";
-import {RouterLink} from "@angular/router";
-import {BaseChartDirective} from "ng2-charts";
-import DataLabelsPlugin from "chartjs-plugin-datalabels";
-import {
-  BarController,
-  BarElement,
-  CategoryScale,
-  Chart,
-  ChartConfiguration,
-  ChartType,
-  Legend,
-  LinearScale,
-  Tooltip
-} from "chart.js";
-import {NgxPaginationModule} from "ngx-pagination";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  imports: [
-    BaseChartDirective,
-    RouterLink,
-    NgxPaginationModule,
-  ],
-  styleUrls: []
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  private readonly invoiceService = inject(InvoiceService);
-  private readonly reportService = inject(ReportService);
-
-  public barChartOptions: ChartConfiguration['options'] = {
-    responsive: true,
-    aspectRatio: 4,
-    // We use these empty structures as placeholders for dynamic theming.
-    scales: {
-      x: {},
-      y: {
-        min: 10,
-      },
-    },
-    plugins: {
-      legend: {
-        display: false,
-      },
-      datalabels: {
-        anchor: 'end',
-        align: 'end',
-      },
-    },
-  };
-  public barChartType: ChartType = 'bar';
-  public barChartPlugins = [DataLabelsPlugin];
-
 
   type = 'bar';
   data: any;
@@ -78,16 +32,11 @@ export class DashboardComponent implements OnInit {
     }
   };
 
+  constructor(private invoiceService: InvoiceService,
+              private reportService: ReportService) {
+  }
+
   ngOnInit(): void {
-    Chart.register(
-      CategoryScale,
-      LinearScale,
-      BarElement,
-      BarController,
-      Tooltip,
-      Legend,
-      DataLabelsPlugin
-    );
    this.getNewInvoices();
 
     this.reportService.getTotalSalesPerYear().subscribe(res => {

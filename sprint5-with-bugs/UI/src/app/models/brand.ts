@@ -1,5 +1,5 @@
-export interface Brand {
-  id?: number;
-  name?: string;
-  slug?: string;
+export class Brand {
+  id!: number;
+  name!: string;
+  slug!: string;
 }

@@ -38,7 +38,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/@y3krulez/angular-archwizard/styles/archwizard.scss",
+              "node_modules/angular-archwizard/styles/archwizard.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
@@ -84,10 +84,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Toolshop:build:production"
+              "browserTarget": "Toolshop:build:production"
             },
             "development": {
-              "buildTarget": "Toolshop:build:development"
+              "browserTarget": "Toolshop:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Toolshop:build"
+            "browserTarget": "Toolshop:build"
           }
         },
         "test": {
@@ -110,7 +110,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/@y3krulez/angular-archwizard/styles/archwizard.scss",
+              "node_modules/angular-archwizard/styles/archwizard.css",
               "src/styles.css"
             ],
             "scripts": []
