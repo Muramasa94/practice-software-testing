@@ -50,8 +50,6 @@ services:
     container_name: cron
     restart: always
     command: crond -f -l 8
-    volumes_from:
-      - laravel-api
     environment:
       - "PHP_OPCACHE_VALIDATE_TIMESTAMPS=1"
       - "DB_PORT=3306"
