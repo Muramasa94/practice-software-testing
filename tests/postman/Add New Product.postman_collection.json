@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "82697f41-ee14-4435-bc6a-e172fee0abee",
+		"name": "Add New Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47564292",
+		"_collection_link": "https://dptdat22-4979210.postman.co/workspace/Dat's-Team's-Workspace~760fa100-c3f9-4c31-8acf-19d5aa8ae17c/collection/47564292-82697f41-ee14-4435-bc6a-e172fee0abee?action=share&source=collection_link&creator=47564292"
+	},
+	"item": [
+		{
+			"name": "Post data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let expectedRes = pm.iterationData.get(\"expectedRes\");",
+							"",
+							"pm.test(`Response status matches expected result: ${expectedRes}`, function () {",
+							"    if (expectedRes === \"SUCCESS\") {",
+							"        pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"    } ",
+							"    else if (expectedRes === \"FAILURE\") {",
+							"        pm.expect(pm.response.code).to.be.oneOf([400, 422]);",
+							"    } ",
+							"    else {",
+							"        pm.expect.fail(`Invalid expectedRes value: ${expectedRes}`);",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"\",\n    \"name\": \"{{productName}}\",\n    \"description\": \"{{productDescription}}\",\n    \"stock\": \"{{stock}}\",\n    \"price\": \"{{price}}\",\n    \"brand_id\": \"{{brandID}}\",\n    \"category_id\": \"{{categoryID}}\",\n    \"product_image_id\": \"{{imgID}}\",\n    \"is_location_offer\": {{isLocationOffer}},\n    \"is_rental\": {{isRental}}\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8091/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"products"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

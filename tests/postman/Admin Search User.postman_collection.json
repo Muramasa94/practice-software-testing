@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "26d22b2c-8a9a-48e9-9669-07494ac33e8f",
+		"name": "Admin Search User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47564292",
+		"_collection_link": "https://dptdat22-4979210.postman.co/workspace/Dat's-Team's-Workspace~760fa100-c3f9-4c31-8acf-19d5aa8ae17c/collection/47564292-26d22b2c-8a9a-48e9-9669-07494ac33e8f?action=share&source=collection_link&creator=47564292"
+	},
+	"item": [
+		{
+			"name": "Get data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let expectedRes = pm.iterationData.get(\"expectedRes\");\r",
+							"let jsonData;\r",
+							"\r",
+							"try {\r",
+							"    jsonData = pm.response.json(); // Parse the JSON\r",
+							"} catch (e) {\r",
+							"    pm.expect.fail(\"Response body is not valid JSON\");\r",
+							"}\r",
+							"\r",
+							"pm.test(`Response status matches expected result: ${expectedRes}`, function () {\r",
+							"    if (expectedRes === \"FAILURE\") {\r",
+							"        pm.expect(pm.response.code).to.be.oneOf([400, 422]);\r",
+							"    }\r",
+							"    else {\r",
+							"        pm.expect(pm.response.code).to.equal(200);\r",
+							"\r",
+							"        if (expectedRes === \"EXIST\") {\r",
+							"            pm.expect(jsonData.total, \"Total should be greater than 0\").to.be.above(0);\r",
+							"        } \r",
+							"        else if (expectedRes === \"EMPTY\") {\r",
+							"            pm.expect(jsonData.total, \"Total should equal 0\").to.equal(0);\r",
+							"        } \r",
+							"        else {\r",
+							"            pm.expect.fail(`Invalid expectedRes value: ${expectedRes}`);\r",
+							"        }\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwOTEvdXNlcnMvbG9naW4iLCJpYXQiOjE3NTU3MzQ5NDgsImV4cCI6MTc3MTMzNDk0OCwibmJmIjoxNzU1NzM0OTQ4LCJqdGkiOiJhRmM4ZU94YjBTR3ZpbDBSIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4ifQ.F5DHlsS-EuYtwFQZ1ifizYt2mEcLLh0rCDwQzPw5LCw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8091/users/search?page=0&q={{query}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"users",
+						"search"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "q",
+							"value": "{{query}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
