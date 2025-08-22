@@ -1,4 +1,4 @@
-name: Run Playwright & Postman API Tests
+name: Run Postman API Tests
 
 on:
   push:
