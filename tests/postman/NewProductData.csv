@@ -1,0 +1,45 @@
+productName,productDescription,stock,price,brandID,categoryID,imgID,isLocationOffer,isRental,expectedRes
+New Product,"Lorem ipsum",1,11.11,1,1,1,true,true,SUCCESS
+,"Lorem ipsum",1,11.11,1,1,1,true,true,FAILURE
+a,"Lorem ipsum",1,11.11,1,1,1,true,true,SUCCESS
+New Product 2,,1,11.11,1,1,1,true,true,FAILURE
+New Product 3,a,1,11.11,1,1,1,true,true,SUCCESS
+New Product 4,"Lorem ipsum",,11.11,1,1,1,true,true,SUCCESS
+New Product 5,"Lorem ipsum",0,11.11,1,1,1,true,true,SUCCESS
+New Product 6,"Lorem ipsum",1,,1,1,1,true,true,FAILURE
+New Product 7,"Lorem ipsum",1,0,1,1,1,true,true,SUCCESS
+New Product 8,"Lorem ipsum",1,11.11,,1,1,true,true,FAILURE
+New Product 9,"Lorem ipsum",1,11.11,1,,1,true,true,FAILURE
+New Product 10,"Lorem ipsum",1,11.11,1,1,,true,true,FAILURE
+New Product 11,"Lorem ipsum",1,11.11,1,1,1,,true,FAILURE
+New Product 12,"Lorem ipsum",1,11.11,1,1,1,true,,FAILURE
+New-Product **,"Lorem ipsum",1,11.11,1,1,1,true,true,SUCCESS
+New Product 13,"Lorem, ipsum()",1,11.11,1,1,1,true,true,SUCCESS
+New Product 14,"Lorem ipsum",one,11.11,1,1,1,true,true,FAILURE
+New Product 15,"Lorem ipsum",1,ten dollars,1,1,1,true,true,FAILURE
+New Product 16,"Lorem ipsum",1,11.11,one,1,1,true,true,FAILURE
+New Product 17,"Lorem ipsum",1,11.11,999,1,1,true,true,FAILURE
+New Product 18,"Lorem ipsum",1,11.11,1,one,1,true,true,FAILURE
+New Product 19,"Lorem ipsum",1,11.11,1,999,1,true,true,FAILURE
+New Product 20,"Lorem ipsum",1,11.11,1,1,one,true,true,FAILURE
+New Product 21,"Lorem ipsum",1,11.11,1,1,999,true,true,FAILURE
+New Product 22,"Lorem ipsum",1,11.11,1,1,1,1,true,SUCCESS
+New Product 23,"Lorem ipsum",1,11.11,1,1,1,true,1,SUCCESS
+New Product 24,"Lorem ipsum",1,11.11,1,1,1,one,true,FAILURE
+New Product 25,"Lorem ipsum",1,11.11,1,1,1,true,one,FAILURE
+New Product 26,"Lorem ipsum"," 1",11.11,1,1,1,true,true,SUCCESS
+New Product 27,"Lorem ipsum","1 ",11.11,1,1,1,true,true,SUCCESS
+New Product 28,"Lorem ipsum",1," 11.11",1,1,1,true,true,SUCCESS
+New Product 29,"Lorem ipsum",1,"11.11 ",1,1,1,true,true,SUCCESS
+New Product 30,"Lorem ipsum","-1",11.11,1,1,1,true,true,FAILURE
+New Product 31,"Lorem ipsum",1,"-11.11",1,1,1,true,true,FAILURE
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,"Lorem ipsum",1,11.11,1,1,1,true,true,SUCCESS
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,"Lorem ipsum",1,11.11,1,1,1,true,true,SUCCESS
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,"Lorem ipsum",1,11.11,1,1,1,true,true,FAILURE
+New Product 32,"Lorem ipsum",1,11.1,1,1,1,true,true,SUCCESS
+New Product 33,"Lorem ipsum",1,11.111,1,1,1,true,true,SUCCESS
+New Product,"Lorem ipsum",1,9999999.99,1,1,1,true,true,SUCCESS
+New Product,"Lorem ipsum",1,99999999.99,1,1,1,true,true,SUCCESS
+New Product,"Lorem ipsum",1,100000000.00,1,1,1,true,true,FAILURE
+<script>alert(1)</script>,"Lorem ipsum",1,11.11,1,1,1,true,true,FAILURE
+'; DROP TABLE products; --,"Lorem ipsum",1,11.11,1,1,1,true,true,FAILURE

@@ -1,0 +1,32 @@
+email,password,expectedRes
+admin@practicesoftwaretesting.com,welcome01,SUCCESS
+customer@practicesoftwaretesting.com,welcome01,SUCCESS
+customer@practicesoftwaretesting.com,wrongpassword,FAILURE
+test@practicesoftwaretesting.com,welcome01,FAILURE
+invalid.email,welcome01,FAILURE
+cUstOmEr@practicesoftwaretesting.com,welcome01,SUCCESS
+customer@practicesoftwaretesting.com,Welcome01,FAILURE
+,welcome01,FAILURE
+customer@practicesoftwaretesting.com,,FAILURE
+(same person btw)customer@practicesoftwaretesting.com,welcome01,SUCCESS
+customerß@practicesoftwaretesting.com,welcome01,SUCCESS
+" customer@practicesoftwaretesting.com",welcome01,SUCCESS
+"customer@practicesoftwaretesting.com ",welcome01,SUCCESS
+customer@practicesoftwaretesting.com," welcome01",FAILURE
+customer@practicesoftwaretesting.com,"welcome01 ",FAILURE
+customer3@practicesoftwaretesting.com,welcome1,FAILURE
+customer4@practicesoftwaretesting.com,welcome001,SUCCESS
+customer5@practicesoftwaretesting.com,welcome00000000000000000000000000000001,SUCCESS
+customer6@practicesoftwaretesting.com,welcome000000000000000000000000000000001,SUCCESS
+customer7@practicesoftwaretesting.com,welcome0000000000000000000000000000000001,FAILURE
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@practicesoftwaretesting.com,welcome01,SUCCESS
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@practicesoftwaretesting.com,welcome01,SUCCESS
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@practicesoftwaretesting.com,welcome01,FAILURE
+disableduser@example.com,welcome01,FAILURE
+cus-tom.er@practicesoftwaretesting.com,welcome01,SUCCESS
+customer@practice-software-testing.com,welcome01,SUCCESS
+customer@practice!software?testing.com,welcome01,FAILURE
+customer8@practicesoftwaretesting.com,welcome/01,SUCCESS
+' OR 1=1--,welcome01,FAILURE
+customer@practicesoftwaretesting.com,' OR '1'='1,FAILURE
+<script>alert(1)</script>@example.com,<script>alert('pw')</script>,FAILURE

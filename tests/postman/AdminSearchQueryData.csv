@@ -1,0 +1,33 @@
+query,expectedRes
+Jane,EXIST
+Doe,EXIST
+Jane Doe,EXIST
+customer@practicesoftwaretesting.com,EXIST
+disableduser@example.com,EXIST
+admin2@practicesoftwaretesting.com,EXIST
+admin@practicesoftwaretesting.com,EXIST
+customer@practicesoft,EXIST
+JANE,EXIST
+dOE,EXIST
+cUstOmEr@prActIcEsOftwArEtEstIng.cOm,EXIST
+name_with_unicode_ß_中文,EXIST
+abcdefg,EMPTY
+notacustomer@practicesoftwaretesting.com,EMPTY
+" Jane Doe",EXIST
+"Jane Doe ",EXIST
+" customer@practicesoftwaretesting.com",EXIST
+"customer@practicesoftwaretesting.com ",EXIST
+(same person btw)customer@practicesoftwaretesting.com,EXIST
+cus-tom.er@practicesoftwaretesting.com,EXIST
+customer@practice-software-testing.com,EXIST
+,EXIST
+a,EXIST
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,EXIST
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,EXIST
+bbbbbbbbbbbbbbbbbbb,EXIST
+bbbbbbbbbbbbbbbbbbbb,EXIST
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@practicesoftwaretesting.com,EXIST
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@practicesoftwaretesting.com,EXIST
+<script>alert(1)</script>,FAILURE
+' OR '1'='1,FAILURE
+'; DROP TABLE users; --,FAILURE
