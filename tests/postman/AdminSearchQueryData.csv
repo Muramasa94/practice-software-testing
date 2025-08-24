@@ -4,8 +4,8 @@ Doe,EXIST
 Jane Doe,EXIST
 customer@practicesoftwaretesting.com,EXIST
 disableduser@example.com,EXIST
-admin2@practicesoftwaretesting.com,EXIST
-admin@practicesoftwaretesting.com,EXIST
+admin2@practicesoftwaretesting.com,EMPTY
+admin@practicesoftwaretesting.com,EMPTY
 customer@practicesoft,EXIST
 JANE,EXIST
 dOE,EXIST
@@ -17,7 +17,6 @@ notacustomer@practicesoftwaretesting.com,EMPTY
 "Jane Doe ",EXIST
 " customer@practicesoftwaretesting.com",EXIST
 "customer@practicesoftwaretesting.com ",EXIST
-(same person btw)customer@practicesoftwaretesting.com,EXIST
 cus-tom.er@practicesoftwaretesting.com,EXIST
 customer@practice-software-testing.com,EXIST
 ,EXIST

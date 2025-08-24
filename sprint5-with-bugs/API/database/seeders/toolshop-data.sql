@@ -38,7 +38,12 @@ VALUES (1, 'John', 'Doe', 'Test street 123', 'Utrecht', NULL, 'The Netherlands',
         (17, 'John', 'Doe', 'Test street 123', 'Utrecht', NULL, 'The Netherlands', NULL, NULL, '1980-01-01',
         'admin2@practicesoftwaretesting.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'admin'),
         (18, 'name_with_unicode_ß_中文', 'Doe', 'Test street 98', 'Vienna', NULL, 'Austria', NULL, NULL, '1980-02-02',
-        'customerß@practicesoftwaretesting.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user');
+        'customerß@practicesoftwaretesting.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user'),
+        (19, 'Jane', 'Doe', 'Test street 98', 'Vienna', NULL, 'Austria', NULL, NULL, '1980-02-02',
+        'a@b.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user'),
+        (20, 'Jane', 'Doe', 'Test street 98', 'Vienna', NULL, 'Austria', NULL, NULL, '1980-02-02',
+        'ab@c.com', '9e2ed9cb4bf54a6b9dc4669a1d295466b2585c4346092bffb5333098431cd61d', 'user');
+        
 
 /** Disabled User **/
 INSERT INTO users (id, first_name, last_name, address, city, state, country, postcode, phone, dob, email, password, role, enabled)

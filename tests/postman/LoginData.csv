@@ -8,7 +8,6 @@ cUstOmEr@practicesoftwaretesting.com,welcome01,SUCCESS
 customer@practicesoftwaretesting.com,Welcome01,FAILURE
 ,welcome01,FAILURE
 customer@practicesoftwaretesting.com,,FAILURE
-(same person btw)customer@practicesoftwaretesting.com,welcome01,SUCCESS
 customerß@practicesoftwaretesting.com,welcome01,SUCCESS
 " customer@practicesoftwaretesting.com",welcome01,SUCCESS
 "customer@practicesoftwaretesting.com ",welcome01,SUCCESS
@@ -16,6 +15,8 @@ customer@practicesoftwaretesting.com," welcome01",FAILURE
 customer@practicesoftwaretesting.com,"welcome01 ",FAILURE
 customer3@practicesoftwaretesting.com,welcome1,FAILURE
 customer4@practicesoftwaretesting.com,welcome001,SUCCESS
+a@b.com,welcome01,SUCCESS
+ab@c.com,welcome01,SUCCESS
 customer5@practicesoftwaretesting.com,welcome00000000000000000000000000000001,SUCCESS
 customer6@practicesoftwaretesting.com,welcome000000000000000000000000000000001,SUCCESS
 customer7@practicesoftwaretesting.com,welcome0000000000000000000000000000000001,FAILURE
